@@ -20,6 +20,7 @@ export class HomePage {
     public thingService: ThingspeakService) {
 
       this.loadSensor();
+      console.log("informacion" + this.loadSensor());
 
      this.menuFinal = [
        {title: 'Agregar Sensor'},
@@ -34,6 +35,7 @@ export class HomePage {
       .then(data1 => {
         this.sensors = data1;
       });
+      
   }
 
   openMenu(){

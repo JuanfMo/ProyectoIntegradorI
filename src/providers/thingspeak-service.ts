@@ -17,10 +17,8 @@ export class ThingspeakService {
     }
 
     return new Promise(resolve => {
-      this.http.get('https://api.thingspeak.com/channels/263862/feeds.json?results=20')
-          .map(res => res.json())
-          .subscribe(data1 => {
-            this.data1 = data1.results;
+      this.http.get('https://api.thingspeak.com/channels/263862/feeds.json?results=0').map(res => res.json()).subscribe(data1 => {
+            this.data1 = data1;
             resolve(this.data1);
           });
     });
