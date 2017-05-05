@@ -21,9 +21,9 @@
 </ion-header>
 
 
-<ion-content class="home">
+<ion-content >
   <ion-list>
-    <ion-item *ngFor = "let sen of sensors">
+    <ion-item *ngFor = "let sen of this.sensors">
       <p>Todo deberia estar aqui</p>
       <h2>{{sen.channel.name}}</h2>
       <h2>{{sen.channel.field1}} {{sen.channel.field2}} </h2>
@@ -31,10 +31,10 @@
   </ion-list>
   <ion-content>
     <ion-item>
-      <iframe width="550" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/263862/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=1000&type=column"></iframe>
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/263862/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=5000&timescale=10&type=spline"></iframe>
     </ion-item>
     <ion-item>
-      <iframe width="550" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/263862/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=1000&type=column"></iframe>
+      <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/263862/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=5000&timescale=10&type=spline"></iframe>
     </ion-item>
 </ion-content>
 </ion-content>

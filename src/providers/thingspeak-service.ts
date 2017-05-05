@@ -8,9 +8,9 @@ export class ThingspeakService {
   
   data1: any;
 
-  constructor(public http: Http) {  }
+  constructor(public http: Http) { console.log("aca empieza el mensaje"); }
 
-  load(){
+  /**load(){
     if (this.data1){
       //ya se han cargado los datos
       return Promise.resolve(this.data1);
@@ -22,6 +22,14 @@ export class ThingspeakService {
             resolve(this.data1);
           });
     });
+  }**/
+
+  getData(){
+    
+    this.http.get('https://api.thingspeak.com/channels/263862/feeds.json?results=0').map(res => res.json()).subscribe(data =>{
+      return data;
+    });
   }
+
 
 }

@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 })
 export class HomePage {
  
-  public sensors: any;
+  sensors: any;
   menuFinal: Array<{title: string}>;
 
   constructor(
@@ -19,9 +19,8 @@ export class HomePage {
     public navCtrl: NavController,
     public thingService: ThingspeakService) {
 
-      this.loadSensor();
-      console.log("informacion" + this.loadSensor());
-
+      this.sensors = this.cargar();
+    
      this.menuFinal = [
        {title: 'Agregar Sensor'},
        {title: 'Configuracion'},
@@ -30,12 +29,9 @@ export class HomePage {
      
   }
 
-  loadSensor(){
-    this.thingService.load()
-      .then(data1 => {
-        this.sensors = data1;
-      });
-      
+
+  cargar(){
+    this.thingService.getData();
   }
 
   openMenu(){
